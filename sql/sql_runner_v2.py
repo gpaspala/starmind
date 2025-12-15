@@ -1,4 +1,4 @@
-mport psycopg
+import psycopg
 
 DATABASE_URL = (
 "postgresql://neondb_owner:npg_4eujTL9xmFDM@ep-green-sound-ab9zz76g-pooler.eu-west-2.aws.neon.tech/"
