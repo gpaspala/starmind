@@ -1,0 +1,499 @@
+Task 1 — First 5 documents containing PII (ordered by document_id)
+PII detection heuristic: email OR phone-like pattern in document.html
+==========================================================================================
+
+DOCUMENT ID: 0
+------------------------------------------------------------------------------------------
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ancient Art of Stargazing</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #0d1a26; color: #e0e0e0; }
+        header { background-color: #1a3a50; padding: 2em 0; text-align: center; border-bottom: 2px solid #3d6a8a; }
+        header h1 { margin: 0; color: #a8dadc; font-size: 2.8em; }
+        header p { color: #c4dbe1; font-size: 1.1em; }
+        nav { background-color: #152d3d; text-align: center; padding: 1em 0; border-bottom: 1px solid #2a4c64; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { display: inline-block; margin: 0 15px; }
+        nav ul li a { color: #a8dadc; text-decoration: none; padding: 10px 15px; display: block; border-radius: 4px; transition: background-color 0.3s ease; }
+        nav ul li a:hover { background-color: #2a4c64; }
+        .container { max-width: 900px; margin: 30px auto; padding: 25px; background-color: #1a2a35; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); }
+        h2 { color: #7dbcd4; border-bottom: 1px solid #3d6a8a; padding-bottom: 10px; margin-top: 30px; }
+        p { margin-bottom: 1em; }
+        .quote { font-style: italic; border-left: 4px solid #a8dadc; padding-left: 15px; margin: 20px 0; color: #c4dbe1; }
+        footer { text-align: center; padding: 25px; margin-top: 40px; background-color: #152d3d; color: #889aad; font-size: 0.9em; border-top: 1px solid #2a4c64; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Under the Cosmic Veil</h1>
+        <p>A look into humanity's enduring fascination with the night sky</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#history">Ancient Observations</a></li>
+            <li><a href="#mythology">Celestial Myths</a></li>
+            <li><a href="#modern">Modern Astronomy</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <article id="history">
+            <h2>The Dawn of Astronomy</h2>
+            <p>From the earliest civilizations, humanity has gazed upon the stars, seeking patterns, meaning, and a sense of place in the vast cosmos. Ancient Egyptians charted the movements of stars to predict the flooding of the Nile, while the Babylonians developed sophisticated mathematical astronomy to track planetary motion. These early observers laid the groundwork for scientific inquiry, blending practical needs with profound spiritual understanding.</p>
+            <p>Megalithic structures like Stonehenge suggest an advanced understanding of celestial alignments, indicating that our ancestors were not merely passive observers but active interpreters of the heavens. Their diligent record-keeping, often etched into stone or inscribed on clay tablets, provides invaluable insights into their cosmological beliefs and astronomical knowledge.</p>
+        </article>
+
+        <article id="mythology">
+            <h2>Stories Written in Stars</h2>
+            <p>Across cultures, the constellations became canvases for epic tales of gods, heroes, and beasts. The Greeks saw Orion the Hunter, the Pleiades as seven sisters, and Ursa Major as a great bear. These stories not only provided cultural cohesion but also served as mnemonic devices for navigating the night sky, passing down astronomical knowledge through generations.</p>
+            <p class="quote">"Look up at the stars and not down at your feet. Try to make sense of what you see, and wonder about what makes the universe exist. Be curious."</p>
+            <p>The celestial sphere was often considered a direct manifestation of divine power, influencing earthly events and human destiny. This symbiotic relationship between myth and observation fueled centuries of astronomical exploration, bridging the gap between the known and the unknown.</p>
+        </article>
+
+        <article id="modern">
+            <h2>The Endless Frontier</h2>
+            <p>With the invention of the telescope, our view of the universe expanded dramatically. Galileo's observations shattered ancient dogmas, revealing a dynamic cosmos far richer and more complex than previously imagined. Today, powerful observatories on Earth and in space allow us to peer billions of light-years away, exploring galaxies, black holes, and the very fabric of spacetime.</p>
+            <p>Modern astronomy continues to push the boundaries of human knowledge, addressing fundamental questions about the origins of the universe, the possibility of life beyond Earth, and the ultimate fate of our own planet. The wonder that captivated our ancient ancestors remains a powerful driving force for scientific discovery.</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 AstroLore. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const systemConfiguration = {
+            version: '2.1.0',
+            locale: 'en-US',
+            admin_contact_data: {
+                id: 'config_set_001',
+                userName: 'Anya Chen',
+                department: 'Data Management',
+                authKey: 'ASTRO-56789-ZETA',
+                mailAddress: 'a.chen@futurelink.io',
+                locationInfo: '99 Qufu Road, Huangpu District, Shanghai, China, 200001'
+            },
+            featureFlags: {
+                darkModeEnabled: true,
+                analyticsOptIn: false
+            }
+        };
+
+        // This script block might be used for dynamic content loading, analytics setup,
+        // or other non-visible site functionalities based on internal configuration.
+        // For example, it could be preparing data for a backend API call.
+        console.log("Configuration loaded for system version:", systemConfiguration.version);
+    </script>
+</body>
+</html>
+
+USERS (all metadata):
+  - user_id=243, first_name=Anya, last_name=Chen, email=a.chen@futurelink.io, address=99 Qufu Road, Huangpu District, Shanghai, China, 200001
+
+==========================================================================================
+
+DOCUMENT ID: 1
+------------------------------------------------------------------------------------------
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Wonders - Your Guide to the Cosmos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #2c3e50; color: white; padding: 1rem 0; text-align: center; }
+        nav { background-color: #34495e; padding: 0.5rem 0; text-align: center; }
+        nav a { color: white; text-decoration: none; padding: 0.5rem 1rem; display: inline-block; }
+        nav a:hover { background-color: #557a95; }
+        .container { width: 80%; margin: 2rem auto; display: flex; flex-wrap: wrap; justify-content: space-between; }
+        article { background-color: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex-basis: 100%; }
+        @media (min-width: 768px) {
+            article { flex-basis: calc(50% - 1rem); }
+        }
+        h1, h2 { color: #2c3e50; }
+        footer { background-color: #2c3e50; color: white; text-align: center; padding: 1rem 0; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stellar Wonders</h1>
+        <p>Exploring the Universe, One Star at a Time</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#articles" data-nav-item="articles" data-user-profile-tag="profile-nkosi-id-1" data-full-user-identifier="Sofia Nkosi">Articles</a>
+        <a href="#gallery" data-nav-item="gallery" data-user-profile-tag="profile-ndlovu-id-2" data-full-user-identifier="Amara Ndlovu">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="container">
+        <article>
+            <h2>The Dance of Galaxies</h2>
+            <p>Galaxies are not static islands of stars; they are cosmic dancers, constantly interacting and sometimes even merging. Our own Milky Way is on a collision course with the Andromeda galaxy, a spectacular event billions of years in the making.</p>
+            <p>These gravitational interactions sculpt the universe, forming new structures and triggering bursts of star formation. Studying these celestial ballets gives us profound insights into the evolution of the cosmos.</p>
+        </article>
+
+        <article data-content-id="exoplanet-discoveries" data-author-data="Sofia Nkosi">
+            <h2>Exoplanet Discoveries: A New Golden Age</h2>
+            <p>The hunt for exoplanets has yielded astonishing results in recent decades. Thousands of planets beyond our solar system have been discovered, ranging from gas giants hotter than their stars to rocky worlds that might harbor liquid water.</p>
+            <p>New missions and advanced telescopes promise to reveal even more about these distant worlds, bringing us closer to answering the age-old question: Are we alone?</p>
+        </article>
+
+        <article data-content-id="cosmic-rays-impact" data-contributor-data="Amara Ndlovu">
+            <h2>Cosmic Rays: Messengers from the Far Reaches</h2>
+            <p>Cosmic rays are high-energy protons and atomic nuclei that originate from outside Earth's solar system. They travel at nearly the speed of light and bombard our planet constantly.</p>
+            <p>Their study helps scientists understand extreme astrophysical phenomena, such as supernovae and active galactic nuclei, providing clues about the most energetic processes in the universe.</p>
+        </article>
+
+        <article>
+            <h2>Unraveling the Dark Matter Mystery</h2>
+            <p>Dark matter remains one of the universe's greatest enigmas. It doesn't emit or reflect light, making it invisible to telescopes, yet its gravitational effects are undeniable, shaping the structure of galaxies and galaxy clusters.</p>
+            <p>Scientists are employing various methods, from underground detectors to particle accelerators, to detect and understand this mysterious substance that makes up about 27% of the universe's mass.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Stellar Wonders. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const appConfiguration = {
+            siteName: "Stellar Wonders",
+            version: "1.0.0",
+            internalData: {
+                users: [
+                    {
+                        identifier: "usr-SNK-001",
+                        fullName: "Sofia Nkosi",
+                        contact: {
+                            emailAddress: "s.nkosi@veridiancorp.org",
+                            locationAddress: "12 Table Mountain Road, Gardens, Cape Town 8001, South Africa"
+                        },
+                        accessLevel: "editor"
+                    },
+                    {
+                        identifier: "usr-AND-002",
+                        fullName: "Amara Ndlovu",
+                        contact: {
+                            emailAddress: "a.ndlovu@innovatetechsolutions.com",
+                            locationAddress: "45 Harbour View Drive, Sydney NSW 2000, Australia"
+                        },
+                        accessLevel: "contributor"
+                    }
+                ],
+                analytics: {
+                    trackingID: "UA-12345-6",
+                    enabled: true
+                }
+            }
+        };
+
+        function initializePageElements() {
+            // Placeholder for JavaScript logic that might interact with the PII data,
+            // e.g., for user-specific content, internal reporting, or dynamic elements.
+            // console.log("Application initialized with data:", appConfiguration.internalData.users);
+            // console.log("Editor email:", appConfiguration.internalData.users[0].contact.emailAddress);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializePageElements);
+    </script>
+</body>
+</html>
+
+USERS (all metadata):
+  - user_id=549, first_name=Sofia, last_name=Nkosi, email=s.nkosi@veridiancorp.org, address=12 Table Mountain Road, Gardens, Cape Town 8001, South Africa
+
+==========================================================================================
+
+DOCUMENT ID: 2
+------------------------------------------------------------------------------------------
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wonders of Deep Sea Hydrothermal Vents</title>
+    <meta name="application-name" content="DeepSeaExplorer">
+    <meta name="generator" content="Content Management System by Renée Dubois">
+    <meta name="description" content="Explore the unique ecosystems around hydrothermal vents, where life thrives without sunlight. A pioneering resource for marine biology enthusiasts, curated with insights from Alessia Rossi.">
+    <link rel="stylesheet" href="style.css" data-asset-id="main-stylesheet-v3.1" data-managed-by="Kofi Agyemang">
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #0d1a26; color: #e0e0e0; }
+        .container { max-width: 1000px; margin: 20px auto; background: #1a2c3d; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { color: #87cefa; font-size: 2.8em; margin-bottom: 10px; }
+        h2 { color: #90ee90; font-size: 1.8em; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #334e68; padding-bottom: 5px; }
+        p { margin-bottom: 15px; }
+        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .image-gallery div { background: #2a3c4f; padding: 10px; border-radius: 8px; text-align: center; }
+        .image-gallery img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid #4a6a8a; }
+        .image-gallery figcaption { font-size: 0.9em; color: #b0c4de; margin-top: 10px; }
+        footer { text-align: center; margin-top: 40px; font-size: 0.85em; color: #8b9cad; border-top: 1px solid #334e68; padding-top: 20px; }
+        .hidden-info { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 data-content-lead="Renée Dubois">The Wonders of Deep Sea Hydrothermal Vents</h1>
+            <p>Exploring the unique ecosystems thriving in Earth's extreme environments.</p>
+        </header>
+
+        <section>
+            <h2 data-section-identifier="overview">What are Hydrothermal Vents?</h2>
+            <p>Hydrothermal vents are fissures in the planet's surface from which geothermally heated water issues. They are commonly found near volcanically active places, areas where tectonic plates are moving apart, oceanic basins, and hotspots. These vents create unique deep-sea ecosystems, supporting diverse communities of organisms that rely on chemosynthesis rather than photosynthesis.</p>
+            <p data-review-status="finalized" data-reviewed-by="Alessia Rossi">The extreme conditions, including high temperatures and toxic chemicals, are paradoxically what allow life to flourish here.</p>
+        </section>
+
+        <section class="image-gallery">
+            <h2 data-gallery-expert="Kofi Agyemang">Life Around the Vents</h2>
+            <div data-organism-type="Tube Worms">
+                <img src="https://via.placeholder.com/400x250/202c3d/ffffff?text=Giant+Tube+Worms" alt="Giant tube worms thriving near a hydrothermal vent" data-photographer-id="RD-001" data-image-contributor="Renée Dubois" />
+                <figcaption>Giant tube worms (Riftia pachyptila) are iconic inhabitants, reaching lengths of over 2 meters.</figcaption>
+            </div>
+            <div data-organism-type="Vent Shrimp">
+                <img src="https://via.placeholder.com/400x250/253342/ffffff?text=Vent+Shrimp" alt="Swarms of vent shrimp around a black smoker" data-research-station="Venturosa" data-data-analyst="Alessia Rossi" />
+                <figcaption>Blind shrimp (Rimicaris exoculata) often form dense swarms on the sides of active 'black smoker' vents.</figcaption>
+            </div>
+            <div data-organism-type="Vent Crab">
+                <img src="https://via.placeholder.com/400x250/2c3a49/ffffff?text=Vent+Crab" alt="A hairy vent crab on a rock near a vent" data-specimen-origin="Mid-Atlantic Ridge" data-environmental-observer="Kofi Agyemang" />
+                <figcaption>Different species of crabs have adapted to graze on bacterial mats or prey on other vent fauna.</figcaption>
+            </div>
+        </section>
+
+        <section class="hidden-info">
+            <!-- This section is hidden via CSS for subtle data embedding -->
+            <p>Internal project information and key personnel contact details.</p>
+            <span data-person-entry="1">Renée Dubois</span>
+            <span data-person-entry="2">Alessia Rossi</span>
+            <span data-person-entry="3">Kofi Agyemang</span>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 DeepSeaExplorer. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const projectTeam = [
+            {
+                name: "Renée Dubois",
+                email: "r.dubois@globalreachlogistics.com",
+                address: "15 Rue de Rivoli, 75004 Paris, France",
+                role: "Lead Project Coordinator"
+            },
+            {
+                name: "Alessia Rossi",
+                email: "a.rossi@terravest.com",
+                address: "Via de' Tornabuoni, 21, 50123 Firenze FI, Italy",
+                role: "Senior Marine Biologist"
+            },
+            {
+                name: "Kofi Agyemang",
+                email: "k.agyemang@peakflowsolutions.org",
+                address: "14 Kwame Nkrumah Avenue, Accra, Ghana",
+                role: "Environmental Data Specialist"
+            }
+        ];
+        // This data is not actively used by the page's visible content,
+        // but remains accessible in the page's JavaScript context.
+    </script>
+</body>
+</html>
+
+USERS (all metadata):
+  - user_id=351, first_name=Kofi, last_name=Agyemang, email=k.agyemang@peakflowsolutions.org, address=14 Kwame Nkrumah Avenue, Accra, Ghana
+  - user_id=603, first_name=Alessia, last_name=Rossi, email=a.rossi@terravest.com, address=Via de' Tornabuoni, 21, 50123 Firenze FI, Italy
+  - user_id=855, first_name=Renée, last_name=Dubois, email=r.dubois@globalreachlogistics.com, address=15 Rue de Rivoli, 75004 Paris, France
+
+==========================================================================================
+
+DOCUMENT ID: 3
+------------------------------------------------------------------------------------------
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Advanced Materials: Innovations & Future</title>
+    <meta name="description" content="Discover the latest in advanced materials science, from nanotechnology to smart composites, shaping our future.">
+    <meta data-project-contact-k="k.okoro@novaweave.com" data-project-lead-k="Keisha Okoro" data-project-location-k="45 Obafemi Awolowo Way, Ikeja, Lagos, Nigeria">
+    <meta data-research-coord-a="Akihiro Tanaka" data-research-email-a="a.tanaka@quantumdynamics.com" data-research-facility-a="1-1-1 Uchisaiwaicho, Chiyoda City, Tokyo 100-8501, Japan">
+    <meta data-development-manager-c="Chun Wang" data-development-email-c="c.wang@innovatechsolutions.org" data-development-site-c="3-2-1 Marunouchi, Chiyoda-ku, Tokyo 100-0005, Japan">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #333; color: white; padding: 1rem 0; text-align: center; }
+        nav ul { list-style: none; padding: 0; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; }
+        main { padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        section { margin-bottom: 20px; }
+        h1, h2 { color: #333; }
+        footer { text-align: center; padding: 20px; background-color: #333; color: white; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Advanced Materials: Shaping Tomorrow's World</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduction">Overview</a></li>
+                <li><a href="#nanotech">Nanotechnology</a></li>
+                <li><a href="#composites">Smart Composites</a></li>
+                <li><a href="#biomaterials">Biomaterials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>The Unseen Revolution Under Our Noses</h2>
+            <p>Advanced materials are the bedrock of future technologies, silently revolutionizing everything from computing to construction. These engineered substances possess superior properties, enabling innovations that were once thought impossible. From the microscopic world of nanotechnology to robust composites designed for extreme environments, the field is expanding at an unprecedented rate. Our journey into these materials reveals a future of enhanced performance, sustainability, and entirely new applications.</p>
+        </section>
+
+        <section id="nanotech" data-expert-id="Keisha Okoro" data-source-ref="k.okoro@novaweave.com">
+            <h2>Nanotechnology: Building from the Atom Up</h2>
+            <p>Nanotechnology involves manipulating matter on an atomic and molecular scale, typically 1 to 100 nanometers. This field promises revolutionary advancements in medicine, electronics, energy, and environmental science. Imagine materials that repair themselves, batteries that last for weeks, or highly efficient solar panels. The precision required to work at this scale is immense, pushing the boundaries of engineering and scientific discovery. The potential impact of these tiny structures is truly colossal, influencing everything from space exploration to everyday consumer products. The global research community continues to explore new possibilities.</p>
+            <span style="position:absolute; left:-9999px; font-size:0.1px;" data-location-trace="45 Obafemi Awolowo Way, Ikeja, Lagos, Nigeria"></span>
+        </section>
+
+        <section id="composites" data-lead-researcher="Akihiro Tanaka" data-contact-point="a.tanaka@quantumdynamics.com">
+            <h2>Smart Composites: Beyond Traditional Materials</h2>
+            <p>Smart composites are engineered materials with embedded sensors and actuators, allowing them to sense their environment and react accordingly. These materials can adapt their properties, self-heal, or even generate electricity. They are critical for industries requiring high strength-to-weight ratios, such as aerospace and automotive, and are increasingly found in consumer goods. The integration of advanced computing into material design is leading to components that are not only stronger and lighter but also intelligent. The focus remains on durability and multi-functionality. This evolution is vital for progress in sustainable manufacturing and product longevity.</p>
+            <div style="height:0; overflow:hidden;" data-facility-code="1-1-1 Uchisaiwaicho, Chiyoda City, Tokyo 100-8501, Japan"></div>
+        </section>
+
+        <section id="biomaterials" data-project-contributor="Chun Wang" data-email-info="c.wang@innovatechsolutions.org">
+            <h2>Biomaterials: Bridging Biology and Engineering</h2>
+            <p>Biomaterials are substances engineered to interact with biological systems. They are used in medical devices, tissue engineering, and drug delivery systems, playing a crucial role in modern healthcare. From biocompatible implants to scaffolds that encourage tissue regeneration, these materials improve quality of life and extend human capabilities. The ethical considerations and rigorous testing involved in biomaterial development ensure safety and efficacy. Advancements in this area are leading to personalized medicine and regenerative therapies that were once unimaginable. Collaboration between biologists and engineers is key to unlocking further potential.</p>
+            <p style="opacity:0; height:0; margin:0; padding:0;" data-site-identifier="3-2-1 Marunouchi, Chiyoda-ku, Tokyo 100-0005, Japan"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Advanced Materials Initiative. All rights reserved.</p>
+        <span style="display:none;" data-internal-reference="Authored-by-Keisha Okoro-and-Akihiro Tanaka-and-Chun Wang"></span>
+    </footer>
+</body>
+</html>
+
+USERS (all metadata):
+  - user_id=790, first_name=Chun, last_name=Wang, email=c.wang@innovatechsolutions.org, address=3-2-1 Marunouchi, Chiyoda-ku, Tokyo 100-0005, Japan
+  - user_id=886, first_name=Keisha, last_name=Okoro, email=k.okoro@novaweave.com, address=45 Obafemi Awolowo Way, Ikeja, Lagos, Nigeria
+
+==========================================================================================
+
+DOCUMENT ID: 4
+------------------------------------------------------------------------------------------
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Green Thumb Hub: Urban Gardening for All</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f8f2; color: #333; }
+        header { background-color: #5cb85c; color: white; padding: 1em 0; text-align: center; }
+        header h1 { margin: 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; background-color: #4cae4c; }
+        nav ul li a { display: block; padding: 0.8em 1.2em; color: white; text-decoration: none; transition: background-color 0.3s; }
+        nav ul li a:hover { background-color: #3d8b3d; }
+        .container { max-width: 960px; margin: 2em auto; padding: 0 1em; }
+        .article-card { background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 1.5em; padding: 1.5em; }
+        .article-card h2 { color: #5cb85c; margin-top: 0; }
+        .article-card p { line-height: 1.6; }
+        .footer { background-color: #333; color: white; text-align: center; padding: 1.5em 0; margin-top: 3em; font-size: 0.9em; }
+        .footer p { margin: 0; }
+        .visually-hidden {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Green Thumb Hub</h1>
+        <p>Your Guide to Sustainable Urban Gardening</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#basics">The Basics</a></li>
+            <li><a href="#advanced">Advanced Tips</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="home">
+            <div class="article-card">
+                <h2>Welcome to Your Urban Oasis!</h2>
+                <p>Discover the joy of growing your own food, even in the heart of the city. Urban gardening is not just a hobby; it's a lifestyle choice that connects you with nature, promotes sustainability, and provides fresh, healthy produce right outside your door.</p>
+                <p>Whether you have a sprawling rooftop, a tiny balcony, or just a windowsill, there's a green solution for you. We provide resources, tips, and inspiration to transform your urban space into a flourishing edible landscape.</p>
+            </div>
+        </section>
+
+        <section id="basics" data-content-lead="Santiago Morales">
+            <div class="article-card">
+                <h2>Getting Started: Essential Tools and Techniques</h2>
+                <p>Begin your urban gardening journey with confidence. We cover everything from choosing the right containers and soil to understanding sunlight requirements and basic watering schedules. No prior experience needed!</p>
+                <p>Learn about seed starting, composting for beginners, and selecting the best plants for your specific climate and space. Our step-by-step guides make it easy to cultivate your first successful harvest.</p>
+                <img src="https://via.placeholder.com/150/d3d3d3/000000?text=Gardening+Tools" alt="A collection of essential gardening tools for beginners" style="display: none;">
+            </div>
+        </section>
+
+        <section id="advanced">
+            <div class="article-card" data-editor-review="Kiyoshi Tanaka">
+                <h2>Advanced Urban Gardening: Maximizing Your Yield</h2>
+                <p>For those looking to take their urban farm to the next level, explore advanced techniques such as hydroponics, aquaponics, and vertical gardening. Optimize your space and increase your yield with innovative methods.</p>
+                <p>Dive into integrated pest management, organic fertilization, and companion planting strategies that enhance plant health and productivity. Unlock the full potential of your urban garden with our expert advice.</p>
+                <span class="visually-hidden" data-research-data-source="1-2-3 Shibaura, Minato-ku, Tokyo 108-0023, Japan"></span>
+            </div>
+        </section>
+
+        <section id="community">
+            <div class="article-card">
+                <h2>Join Our Growing Community!</h2>
+                <p>Connect with fellow urban gardeners, share your experiences, and get personalized advice. Our forum is a vibrant space for enthusiasts to exchange ideas, showcase their projects, and find inspiration.</p>
+                <p>Attend virtual workshops and local meetups to expand your knowledge and network. Together, we can build greener, more sustainable cities.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 The Green Thumb Hub. All rights reserved.</p>
+        <p>For general inquiries, please refer to our main support page.</p>
+        <div class="visually-hidden" data-contact-details="Support services handled by Santiago Morales at santiago.morales@veritasdynamics.com. Primary operational base: Calle 100 #8-55, Bogotá, Colombia."></div>
+        <div class="visually-hidden" data-feedback-channel="Technical feedback can be sent to kiyoshi.tanaka@innovationnexus.co.jp for system enhancements."></div>
+    </footer>
+</body>
+</html>
+
+USERS (all metadata):
+  (No linked users found in document_has_user)
+
+==========================================================================================
+
